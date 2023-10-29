@@ -10,10 +10,13 @@ public class itemCollector : MonoBehaviour
 
     [SerializeField] private Image noteImage;
 
+    [SerializeField] private AudioSource collectionSoundEffect;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Note"))
         {
+            collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             note++;
             noteImage.enabled = true;

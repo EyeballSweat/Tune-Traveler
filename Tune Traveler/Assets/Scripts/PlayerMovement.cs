@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField] private float jumpForce = 10f;
 
     private enum MovementState { idle, walking, jumping, falling, landing }
+
+    [SerializeField] private AudioSource jumpSoundEffect;
     // Need to figure out how to fix landing issue
 
     // Start is called before the first frame update
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && jumpsLeft > 0)
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpsLeft -= 1;
         }
