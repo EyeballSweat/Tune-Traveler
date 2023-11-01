@@ -579,7 +579,8 @@ MonoBehaviour:
   player: {fileID: 1929237199}
   offset: {x: 0, y: 0, z: 0}
   smoothFactor: 3
-  verticalOffset: 0
+  minValues: {x: -11.35, y: 0.99, z: -10}
+  maxValue: {x: 21.69, y: 1.21, z: -10}
 --- !u!114 &270741571
 MonoBehaviour:
   m_ObjectHideFlags: 0
