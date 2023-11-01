@@ -8,7 +8,7 @@ public class CameraSmooth : MonoBehaviour
     [SerializeField] private Vector3 offset;
     [SerializeField] [Range(1, 10)]
     private float smoothFactor;
-    [SerializeField] private float verticalOffset;
+    [SerializeField] private Vector3 minValues, maxValue;
 
     private void FixedUpdate()
     {
@@ -18,7 +18,13 @@ public class CameraSmooth : MonoBehaviour
     private void Follow()
     {
         Vector3 playerPosition = player.position + offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, playerPosition, smoothFactor * Time.fixedDeltaTime);
-        transform.position = new Vector3(smoothPosition.x, smoothPosition.y + verticalOffset, transform.position.z);
+
+        Vector3 boundPosition = new Vector3(
+            Mathf.Clamp(playerPosition.x, minValues.x, maxValue.x),
+            Mathf.Clamp(playerPosition.y, minValues.y, maxValue.y),
+            Mathf.Clamp(playerPosition.z, minValues.z, maxValue.z));
+
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, boundPosition, smoothFactor * Time.fixedDeltaTime);
+        transform.position = smoothPosition;
     }
 }

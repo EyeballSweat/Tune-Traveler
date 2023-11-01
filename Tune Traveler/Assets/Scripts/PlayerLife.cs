@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D.Animation;
+using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private AudioSource hurtSoundEffect;
     public int playerHealth = 0;
     public int maxHealth = 6;
+    private bool gotHurt = false;
+    private enum DamageState { hurt, dead }
 
     private void Start()
     {
@@ -35,11 +39,13 @@ public class PlayerLife : MonoBehaviour
             playerHealth = playerHealth - 1;
             Debug.Log("Health Left: " + playerHealth);
             Hurt();
+            gotHurt = false;
         }
     }
 
     private void Hurt()
     {
+        gotHurt = true;
         hurtSoundEffect.Play();
         anim.SetTrigger("Hurt");
     }
@@ -49,6 +55,25 @@ public class PlayerLife : MonoBehaviour
         deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
+    }
+
+    private void UpdateDamageState()
+    {
+        DamageState damageState;
+
+        if (gotHurt == true)
+        {
+            if (playerHealth >= 2)
+            {
+                damageState = DamageState.hurt;
+            }
+            else if (playerHealth <= 1)
+            {
+                damageState = DamageState.dead;
+            }
+        }
+
+        // FIX THIS anim.SetInteger("DamageState", (int)damageState);
     }
 
     private void RestartLevel()
