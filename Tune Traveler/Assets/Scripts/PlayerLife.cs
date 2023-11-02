@@ -17,18 +17,23 @@ public class PlayerLife : MonoBehaviour
     public int playerHealth = 0;
     public int maxHealth = 6;
     private bool gotHurt = false;
-    private enum DamageState { hurt, dead }
+    private enum DamageState { hurt, dead, normal }
+    DamageState damageState;
+    private bool beingHurt;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerHealth = maxHealth;
+
+        damageState = DamageState.normal;
+        anim.SetInteger("DamageState", (int)damageState);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Hostile"))
+        if (collision.gameObject.CompareTag("Hostile") && beingHurt == false)
         {
             if (playerHealth == 1)
             {
@@ -36,9 +41,14 @@ public class PlayerLife : MonoBehaviour
                 Debug.Log("Player Died");
                 Die();
             }
-            playerHealth = playerHealth - 1;
-            Debug.Log("Health Left: " + playerHealth);
-            Hurt();
+            else
+            {
+                beingHurt = true;
+                playerHealth = playerHealth - 1;
+                Debug.Log("Health Left: " + playerHealth);
+                Hurt();
+            }
+
             gotHurt = false;
         }
     }
@@ -47,33 +57,37 @@ public class PlayerLife : MonoBehaviour
     {
         gotHurt = true;
         hurtSoundEffect.Play();
-        anim.SetTrigger("Hurt");
+    
+        damageState = DamageState.hurt;
+        StartCoroutine(HurtWaitFrame());
+
     }
 
     private void Die()
     {
         deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("Death");
+
+        damageState = DamageState.dead;
+        StartCoroutine(DeathWait());
     }
 
-    private void UpdateDamageState()
+
+
+    IEnumerator HurtWaitFrame()
     {
-        DamageState damageState;
+        anim.SetInteger("DamageState", (int)damageState);
+        yield return new WaitForSeconds(0.1f);
+        damageState = DamageState.normal;
+        anim.SetInteger("DamageState", (int)damageState);
+        beingHurt = false;
+    }
 
-        if (gotHurt == true)
-        {
-            if (playerHealth >= 2)
-            {
-                damageState = DamageState.hurt;
-            }
-            else if (playerHealth <= 1)
-            {
-                damageState = DamageState.dead;
-            }
-        }
-
-        // FIX THIS anim.SetInteger("DamageState", (int)damageState);
+    IEnumerator DeathWait()
+    {
+        anim.SetInteger("DamageState", (int)damageState);
+        yield return new WaitForSeconds(2f);
+        RestartLevel();
     }
 
     private void RestartLevel()
