@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private BoxCollider2D coll;
 
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource hurtSoundEffect;
@@ -20,11 +21,13 @@ public class PlayerLife : MonoBehaviour
     private enum DamageState { hurt, dead, normal }
     DamageState damageState;
     private bool beingHurt;
+    public PlayerMovement playerMovement;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        coll = GetComponent<BoxCollider2D>();
         playerHealth = maxHealth;
 
         damageState = DamageState.normal;
@@ -57,9 +60,18 @@ public class PlayerLife : MonoBehaviour
     {
         gotHurt = true;
         hurtSoundEffect.Play();
-    
+
         damageState = DamageState.hurt;
         StartCoroutine(HurtWaitFrame());
+        playerMovement.knockbackCounter = playerMovement.knockbackTotalTime;
+        if (coll.transform.position.x <= transform.position.x)
+        {
+            playerMovement.knockFromRight = true;
+        }
+        if (coll.transform.position.x > transform.position.x)
+        {
+            playerMovement.knockFromRight = false;
+        }
 
     }
 

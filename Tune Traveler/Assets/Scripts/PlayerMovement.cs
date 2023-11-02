@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField] private float moveSpeed = 7f;
    [SerializeField] private float jumpForce = 10f;
 
+    public float knockbackForce;
+    public float knockbackCounter;
+    public float knockbackTotalTime;
+    public bool knockFromRight;
+
     private enum MovementState { idle, walking, jumping, falling, landing }
 
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -35,9 +40,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
    private void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if (knockbackCounter <= 0)
+        {
+            dirX = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            if (knockFromRight == true)
+            {
+                rb.velocity = new Vector2(-knockbackForce, knockbackForce);
+            }
+            if (knockFromRight == false)
+            {
+                rb.velocity = new Vector2(knockbackForce, knockbackForce);
+            }
 
+            knockbackCounter -= Time.deltaTime;
+        }
         if (IsGrounded() && rb.velocity.y <= 0f)
         {
             jumpsLeft = maxJumps;
