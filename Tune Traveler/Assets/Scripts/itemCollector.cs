@@ -10,7 +10,24 @@ public class itemCollector : MonoBehaviour
 
     [SerializeField] private Image noteImage;
 
+    [SerializeField] private Image saxImageUI;
+    [SerializeField] private Image pianoImageUI;
+    [SerializeField] private Image banjoImageUI;
+    [SerializeField] private Image drumsImageUI;
+    public bool hasSax;
+    public bool hasPiano;
+    public bool hasBanjo;
+    public bool hasDrums;
+
     [SerializeField] private AudioSource collectionSoundEffect;
+
+    private void Start()
+    {
+        hasSax = false;
+        hasPiano = false;
+        hasBanjo = false;
+        hasDrums = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +37,34 @@ public class itemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             note++;
             noteImage.enabled = true;
+        }
+        if (collision.gameObject.CompareTag("Sax"))
+        {
+            collectionSoundEffect.Play();
+            Destroy(collision.gameObject);
+            hasSax = true;
+            saxImageUI.enabled = true;
+        }
+        if (collision.gameObject.CompareTag("Piano"))
+        {
+            collectionSoundEffect.Play();
+            Destroy(collision.gameObject);
+            hasPiano = true;
+            pianoImageUI.enabled = true;
+        }
+        if (collision.gameObject.CompareTag("Banjo"))
+        {
+            collectionSoundEffect.Play();
+            Destroy(collision.gameObject);
+            hasBanjo = true;
+            banjoImageUI.enabled = true;
+        }
+        if (collision.gameObject.CompareTag("Drums"))
+        {
+            collectionSoundEffect.Play();
+            Destroy(collision.gameObject);
+            hasDrums = true;
+            drumsImageUI.enabled = true;
         }
     }
 

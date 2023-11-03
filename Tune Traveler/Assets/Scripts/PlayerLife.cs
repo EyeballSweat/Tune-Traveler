@@ -15,13 +15,19 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource hurtSoundEffect;
-    public int playerHealth = 0;
-    public int maxHealth = 6;
+    public float playerHealth = 0f;
+    public float maxHealth = 3f;
     private bool gotHurt = false;
     private enum DamageState { hurt, dead, normal }
     DamageState damageState;
     private bool beingHurt;
     public PlayerMovement playerMovement;
+
+    [SerializeField] private Sprite fullHeart;
+    [SerializeField] private Sprite halfHeart;
+    [SerializeField] private Sprite emptyHeart;
+
+    [SerializeField] Image[] hearts;
 
     private void Start()
     {
@@ -36,18 +42,18 @@ public class PlayerLife : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Hostile") && beingHurt == false)
+        if (collision.gameObject.CompareTag("Trap") && beingHurt == false)
         {
-            if (playerHealth == 1)
+            if (playerHealth == 0.5f)
             {
-                playerHealth = playerHealth - 1;
+                playerHealth = playerHealth - 0.5f;
                 Debug.Log("Player Died");
                 Die();
             }
             else
             {
                 beingHurt = true;
-                playerHealth = playerHealth - 1;
+                playerHealth = playerHealth - 0.5f;
                 Debug.Log("Health Left: " + playerHealth);
                 Hurt();
             }
@@ -56,7 +62,7 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void Hurt()
+    public void Hurt()
     {
         gotHurt = true;
         hurtSoundEffect.Play();
@@ -75,7 +81,7 @@ public class PlayerLife : MonoBehaviour
 
     }
 
-    private void Die()
+    public void Die()
     {
         deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
@@ -106,4 +112,27 @@ public class PlayerLife : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    void Update()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < playerHealth)
+            {
+                if (i + 0.5f == playerHealth)
+                {
+                    hearts[i].sprite = halfHeart;
+                }
+                else
+                {
+                    hearts[i].sprite = fullHeart;
+                }
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+        }
+    }
+
 }

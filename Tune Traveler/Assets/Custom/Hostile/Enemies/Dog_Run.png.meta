@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1e7ff03cca6b6148a9377aad929556c
+guid: 6c2462a8b0c494e4aa2703640323e6e9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,106 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Piano_Attack_0
+      name: Dog_Run_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 380
-        height: 576
+        width: 735
+        height: 477
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fec9aefb1d88d24fad175f55b904fb9
-      internalID: 639534150
+      spriteID: 4dff305bac4f0ed4596654c72755b50c
+      internalID: 2092255541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Piano_Attack_1
+      name: Dog_Run_1
       rect:
         serializedVersion: 2
-        x: 380
+        x: 735
         y: 0
-        width: 380
-        height: 576
+        width: 735
+        height: 477
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15a5d0f5217d70748a37ba39a6eba4f4
-      internalID: 688303493
+      spriteID: a55d92fbf922eef4fafc14f04ddc64db
+      internalID: 799591706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Piano_Attack_2
+      name: Dog_Run_2
       rect:
         serializedVersion: 2
-        x: 760
+        x: 1470
         y: 0
-        width: 380
-        height: 576
+        width: 735
+        height: 477
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6009ee8126bfadd43b864c3ed34d22c0
-      internalID: 1112944638
+      spriteID: 2048ed9e9a847a742a973ae962579d97
+      internalID: -895124969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Piano_Attack_3
+      name: Dog_Run_3
       rect:
         serializedVersion: 2
-        x: 1140
+        x: 2205
         y: 0
-        width: 380
-        height: 576
+        width: 735
+        height: 477
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4c4d606b92c7ec46b622ce3e927ec25
-      internalID: 316940882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Piano_Attack_4
-      rect:
-        serializedVersion: 2
-        x: 1520
-        y: 0
-        width: 380
-        height: 576
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6aeb488ddbb7ce44aad87e1cc07064b
-      internalID: -1104871892
+      spriteID: a517967651cad9845b5955d8599408af
+      internalID: -2141165437
       vertices: []
       indices: 
       edges: []
@@ -225,11 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Piano_Attack_0: 639534150
-      Piano_Attack_1: 688303493
-      Piano_Attack_2: 1112944638
-      Piano_Attack_3: 316940882
-      Piano_Attack_4: -1104871892
+      Dog_Run_0: 2092255541
+      Dog_Run_1: 799591706
+      Dog_Run_2: -895124969
+      Dog_Run_3: -2141165437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

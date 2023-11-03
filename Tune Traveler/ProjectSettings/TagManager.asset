@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
-  - Hostile
+  - Sax
+  - Piano
+  - Banjo
+  - Drums
+  - Trap
   layers:
   - Default
   - TransparentFX
