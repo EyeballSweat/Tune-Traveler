@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     public float knockbackTotalTime;
     public bool knockFromRight;
 
+    public bool flippedLeft;
+    public bool facingRight;
+
     private enum MovementState { idle, walking, jumping, falling, landing }
 
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -83,13 +86,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (dirX > 0f)
         {
+            facingRight = true;
+            Flip(true);
             moveState = MovementState.walking;
-            sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
+            facingRight = false;
+            Flip(false);
             moveState = MovementState.walking;
-            sprite.flipX = true;
         }
         else
         {
@@ -111,5 +116,19 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    void Flip (bool facingRight)
+    {
+        if (flippedLeft && facingRight)
+        {
+            transform.Rotate(0, -180, 0);
+            flippedLeft = false;
+        }
+        if (!flippedLeft && !facingRight)
+        {
+            transform.Rotate(0, -180, 0);
+            flippedLeft = true;
+        }
     }
 }

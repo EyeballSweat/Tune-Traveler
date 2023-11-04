@@ -10,6 +10,7 @@ TagManager:
   - Banjo
   - Drums
   - Trap
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,8 @@ public class InstrumentMechanics : MonoBehaviour
     public itemCollector itemCollector;
     private enum AttackState { passive, sax, piano, banjo, drums}
 
+    private AttackState attackState = AttackState.passive;
+
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -24,34 +26,32 @@ public class InstrumentMechanics : MonoBehaviour
 
     private void UpdateAttackState()
     {
-        AttackState attackState;
+
+        attackState = AttackState.passive;
 
         if (playerMovement.IsGrounded())
         {
             if (Input.GetKeyDown(KeyCode.RightArrow) && itemCollector.hasSax == true)
             {
                 attackState = AttackState.sax;
+                Debug.Log("Sax go toot");
             }
             if (Input.GetKeyDown(KeyCode.DownArrow) && itemCollector.hasPiano == true)
             {
                 attackState = AttackState.piano;
+                Debug.Log("Piano go FTANG");
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow) && itemCollector.hasBanjo == true)
             {
                 attackState = AttackState.banjo;
+                Debug.Log("Banjo go brrr");
             }
             if (Input.GetKeyDown(KeyCode.UpArrow) && itemCollector.hasDrums == true)
             {
                 attackState = AttackState.drums;
+                Debug.Log("Drums go badum tss");
             }
-            else
-            {
-                attackState = AttackState.passive;
-            }
-        }
-        else
-        {
-            attackState = AttackState.passive;
+
         }
 
        anim.SetInteger("AttackState", (int)attackState);
