@@ -9,8 +9,8 @@ public class InstrumentMechanics : MonoBehaviour
     private Animator anim;
     public PlayerMovement playerMovement;
     public itemCollector itemCollector;
-    private enum AttackState { passive, sax, piano, banjo, drums}
 
+    private enum AttackState { passive, sax, piano, banjo, drums}
     private AttackState attackState = AttackState.passive;
 
     void Start()
@@ -29,14 +29,12 @@ public class InstrumentMechanics : MonoBehaviour
 
         attackState = AttackState.passive;
 
-        if (playerMovement.IsGrounded())
-        {
             if (Input.GetKeyDown(KeyCode.RightArrow) && itemCollector.hasSax == true)
             {
                 attackState = AttackState.sax;
                 Debug.Log("Sax go toot");
             }
-            if (Input.GetKeyDown(KeyCode.DownArrow) && itemCollector.hasPiano == true)
+            if (Input.GetKeyDown(KeyCode.DownArrow) && itemCollector.hasPiano == true && playerMovement.IsGrounded())
             {
                 attackState = AttackState.piano;
                 Debug.Log("Piano go FTANG");
@@ -52,7 +50,7 @@ public class InstrumentMechanics : MonoBehaviour
                 Debug.Log("Drums go badum tss");
             }
 
-        }
+        
 
        anim.SetInteger("AttackState", (int)attackState);
 

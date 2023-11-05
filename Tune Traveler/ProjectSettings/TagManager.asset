@@ -11,6 +11,7 @@ TagManager:
   - Drums
   - Trap
   - Enemy
+  - Floor
   layers:
   - Default
   - TransparentFX

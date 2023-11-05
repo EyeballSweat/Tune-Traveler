@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 141596492}
   m_Layer: 6
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 215273705}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,7 +1096,7 @@ GameObject:
   - component: {fileID: 567640275}
   m_Layer: 6
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1516,7 +1516,7 @@ GameObject:
   - component: {fileID: 857814322}
   m_Layer: 6
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3322,10 +3322,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b017bf9e5e8f71d4fabb49ff7765d0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5275149576287062277, guid: d6ec723d001f57b4bb832ef1c5abbb29, type: 3}
+  playerMovement: {fileID: 1929237217}
+  banjoWavePrefab: {fileID: 5275149576287062277, guid: d6ec723d001f57b4bb832ef1c5abbb29, type: 3}
+  pianoPrefab: {fileID: 5698851550613309043, guid: 99b319be4ec7d3b4987a4d9c6fa13869, type: 3}
   launchPoint: {fileID: 702681308}
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
   shootTime: 0.5
   shootCounter: 0
+  pianoSummoned: 0
+  pianoSpawnDistance: 0
   itemCollector: {fileID: 1929237231}
 --- !u!1 &2010210529
 GameObject:
@@ -3753,7 +3760,7 @@ GameObject:
   - component: {fileID: 2071576747}
   m_Layer: 6
   m_Name: Triangle (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3906,7 +3913,7 @@ GameObject:
   - component: {fileID: 2088565496}
   m_Layer: 6
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

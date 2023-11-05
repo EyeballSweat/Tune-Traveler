@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbProjectile: {fileID: 6132253145612999082}
-  speed: 10
-  projectileLife: 2
+  speed: 8
+  projectileLife: 1.2
   projectileCount: 0
   playerMovement: {fileID: 0}
   facingRight: 0

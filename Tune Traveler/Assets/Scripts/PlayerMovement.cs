@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+    public Quaternion playerRotation;
+    public Vector3 playerPosition;
+    public Vector3 playerDirection;
+
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private int maxJumps = 2;
     private int jumpsLeft;
@@ -38,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         jumpsLeft = maxJumps;
+        playerRotation = transform.rotation;
+        playerPosition = transform.position;
+        playerDirection = transform.forward;
     }
 
     // Update is called once per frame
