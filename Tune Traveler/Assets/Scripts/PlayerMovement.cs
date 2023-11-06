@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public bool flippedLeft;
     public bool facingRight;
 
+    public bool isInvisible;
+
     private enum MovementState { idle, walking, jumping, falling, landing }
 
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         playerRotation = transform.rotation;
         playerPosition = transform.position;
         playerDirection = transform.forward;
+        isInvisible = false;
     }
 
     // Update is called once per frame
@@ -90,6 +93,16 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         MovementState moveState;
+        
+        if (isInvisible)
+        {
+            anim.SetBool("IsInvisible", (bool)true);
+        }
+
+        if (!isInvisible)
+        {
+            anim.SetBool("IsInvisible", (bool)false);
+        }
 
         if (dirX > 0f)
         {

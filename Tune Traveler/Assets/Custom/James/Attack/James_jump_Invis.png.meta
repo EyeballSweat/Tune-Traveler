@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dfdad0d0049b574d8dec966c93d9815
+guid: 369842e28c2630347a96f2b7a7ffc80b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,49 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Saxo_Attack_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 510
-        height: 674
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5be7a5187b394344e95abb112e85020f
-      internalID: -585050766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Saxo_Attack_1
-      rect:
-        serializedVersion: 2
-        x: 510
-        y: 0
-        width: 510
-        height: 674
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8ed92a62711f1e479bcc145ff56b246
-      internalID: -79867772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -161,9 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Saxo_Attack_0: -585050766
-      Saxo_Attack_1: -79867772
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

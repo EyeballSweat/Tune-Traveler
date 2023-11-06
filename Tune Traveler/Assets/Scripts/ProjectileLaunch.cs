@@ -6,12 +6,12 @@ using static UnityEngine.UI.Image;
 public class ProjectileLaunch : MonoBehaviour
 {
     public PlayerMovement playerMovement;
+    public itemCollector itemCollector;
     public GameObject banjoWavePrefab;
     public GameObject pianoPrefab;
     [SerializeField] private Transform launchPoint;
 
     private Animator anim;
-    private BoxCollider2D coll;
     [SerializeField] private LayerMask ground;
 
     [SerializeField] private float shootTime;
@@ -22,12 +22,9 @@ public class ProjectileLaunch : MonoBehaviour
     private Vector3 pianoSpawnPosition;
     private GameObject clonedPiano = null;
 
-    public itemCollector itemCollector;
-
     void Start()
     {
         anim = GetComponent<Animator>();
-        coll = GetComponent<BoxCollider2D>();
         anim.ResetTrigger("PianoHitGround");
         shootCounter = shootTime;
         pianoSpawnPosition = playerMovement.playerPosition + playerMovement.playerDirection * pianoSpawnDistance;
@@ -45,12 +42,19 @@ public class ProjectileLaunch : MonoBehaviour
         {
             SummonPiano();
         }
+
+        if (itemCollector.hasDrums)
+        {
+            ActivateDrums();
+        }
     }
 
     public void ShootBanjo()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow) && shootCounter <= 0)
         {
+            playerMovement.isInvisible = false;
+
             Instantiate(banjoWavePrefab, launchPoint.position, Quaternion.identity);
             shootCounter = shootTime;
         }
@@ -59,19 +63,32 @@ public class ProjectileLaunch : MonoBehaviour
 
     public void SummonPiano()
     {
-
-        
-
         if (Input.GetKeyDown(KeyCode.DownArrow) && playerMovement.IsGrounded() && !pianoSummoned)
         {
+            playerMovement.isInvisible = false;
+
             clonedPiano = Instantiate(pianoPrefab, launchPoint.position, Quaternion.identity);
             pianoSummoned = true;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && playerMovement.IsGrounded() && pianoSummoned)
         {
+            playerMovement.isInvisible = false;
+
             Destroy(clonedPiano);
             anim.ResetTrigger("PianoHitGround");
             pianoSummoned = false;
+        }
+    }
+
+    public void ActivateDrums()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow) && playerMovement.isInvisible == false)
+        {
+            playerMovement.isInvisible = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && playerMovement.isInvisible == true)
+        {
+            playerMovement.isInvisible = false;
         }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Trap
   - Enemy
   - Floor
+  - Banjo Waves
   layers:
   - Default
   - TransparentFX

@@ -66,6 +66,7 @@ public class PlayerLife : MonoBehaviour
     {
         gotHurt = true;
         hurtSoundEffect.Play();
+        playerMovement.isInvisible = false;
 
         damageState = DamageState.hurt;
         StartCoroutine(HurtWaitFrame());

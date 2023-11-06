@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dfdad0d0049b574d8dec966c93d9815
+guid: 881398d8139bfe446873665d2a6a1656
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Saxo_Attack_0
+      name: Drums_Attack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 510
-        height: 674
+        x: 51
+        y: 80
+        width: 274
+        height: 510
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5be7a5187b394344e95abb112e85020f
-      internalID: -585050766
+      spriteID: ee8488d7c58d372409553434c34c2d96
+      internalID: -1611422442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Saxo_Attack_1
+      name: Drums_Attack_1
       rect:
         serializedVersion: 2
-        x: 510
-        y: 0
-        width: 510
-        height: 674
+        x: 608
+        y: 75
+        width: 443
+        height: 484
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8ed92a62711f1e479bcc145ff56b246
-      internalID: -79867772
+      spriteID: 14c152b7f30b2924396caaa87013ea98
+      internalID: 1133386882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drums_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 82
+        width: 462
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548b0ae9b12656b4090c9f68dd7a9437
+      internalID: -247457273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drums_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 80
+        width: 321
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37ad4d3255bebe4abc0baaa06ff608d
+      internalID: 1549948945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drums_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 77
+        width: 311
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da5c4cf1cbdb2643ab56eaee04f5234
+      internalID: 733033426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drums_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 2984
+        y: 77
+        width: 307
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de56f17d56e667459a7ce767c26d137
+      internalID: 718408296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drums_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 3550
+        y: 75
+        width: 445
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b95a124f8a707a49ab6859330bce615
+      internalID: 1796321485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drums_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 4194
+        y: 68
+        width: 274
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91ec51b70441fb48b7dbfcd9ef63ead
+      internalID: 543953961
       vertices: []
       indices: 
       edges: []
@@ -162,8 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Saxo_Attack_0: -585050766
-      Saxo_Attack_1: -79867772
+      Drums_Attack_0: -1611422442
+      Drums_Attack_1: 1133386882
+      Drums_Attack_2: -247457273
+      Drums_Attack_3: 1549948945
+      Drums_Attack_4: 733033426
+      Drums_Attack_5: 718408296
+      Drums_Attack_6: 1796321485
+      Drums_Attack_7: 543953961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

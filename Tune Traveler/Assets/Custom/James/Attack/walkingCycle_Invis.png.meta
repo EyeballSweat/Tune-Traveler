@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dfdad0d0049b574d8dec966c93d9815
+guid: c79ab6d9a9ed05f499d4f1e2ce8390a2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Saxo_Attack_0
+      name: walkingCycle_Invis_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 510
-        height: 674
+        x: 50
+        y: 25
+        width: 259
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5be7a5187b394344e95abb112e85020f
-      internalID: -585050766
+      spriteID: 47f923faf4250514eb5e7aeb1af160cc
+      internalID: -29575300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Saxo_Attack_1
+      name: walkingCycle_Invis_1
       rect:
         serializedVersion: 2
-        x: 510
-        y: 0
-        width: 510
-        height: 674
+        x: 435
+        y: 21
+        width: 258
+        height: 504
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8ed92a62711f1e479bcc145ff56b246
-      internalID: -79867772
+      spriteID: 3bd1d057b925e3845af62349e0150a90
+      internalID: -1086249877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkingCycle_Invis_2
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 18
+        width: 258
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bd18f1fa8449146aa037cfb0045507
+      internalID: 934441867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkingCycle_Invis_3
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 30
+        width: 268
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517b09b2cd8170c42b4917c58f8c21a4
+      internalID: -820662937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkingCycle_Invis_4
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 32
+        width: 259
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e643d50e10847b64f9d2a30ba2ebd6f4
+      internalID: 1712002574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkingCycle_Invis_5
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 30
+        width: 260
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007c965bdd638224b9901fdbc6d93d03
+      internalID: 90460118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkingCycle_Invis_6
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 28
+        width: 259
+        height: 497
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac31623119a9ee449936b531ed7f818
+      internalID: 560776487
       vertices: []
       indices: 
       edges: []
@@ -162,8 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Saxo_Attack_0: -585050766
-      Saxo_Attack_1: -79867772
+      walkingCycle_Invis_0: -29575300
+      walkingCycle_Invis_1: -1086249877
+      walkingCycle_Invis_2: 934441867
+      walkingCycle_Invis_3: -820662937
+      walkingCycle_Invis_4: 1712002574
+      walkingCycle_Invis_5: 90460118
+      walkingCycle_Invis_6: 560776487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
