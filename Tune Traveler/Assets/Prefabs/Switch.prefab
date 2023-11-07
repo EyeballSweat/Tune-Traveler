@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5230673065990067596
 SpriteRenderer:
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchOn: {fileID: 1419295010428427832, guid: 0691f46ae01a5cf4f816612f2cd2e944, type: 3}
   switchOff: {fileID: 2624614933385345579, guid: 15b5dbd578f170f49ba43119df17636a, type: 3}
+  isOn: 0
 --- !u!251 &8959148938116472880
 PlatformEffector2D:
   m_ObjectHideFlags: 0
