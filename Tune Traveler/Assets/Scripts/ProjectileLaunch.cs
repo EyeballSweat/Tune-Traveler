@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.UI.Image;
 
@@ -21,6 +22,7 @@ public class ProjectileLaunch : MonoBehaviour
     [SerializeField] private float pianoSpawnDistance;
     private Vector3 pianoSpawnPosition;
     private GameObject clonedPiano = null;
+    [SerializeField] private Vector2 pianoOffset;
 
     void Start()
     {
@@ -66,8 +68,14 @@ public class ProjectileLaunch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) && playerMovement.IsGrounded() && !pianoSummoned)
         {
             playerMovement.isInvisible = false;
-
-            clonedPiano = Instantiate(pianoPrefab, launchPoint.position, Quaternion.identity);
+            if (playerMovement.flippedLeft)
+            {
+                clonedPiano = Instantiate(pianoPrefab, new Vector2(launchPoint.transform.position.x + -pianoOffset.x, launchPoint.transform.position.y + pianoOffset.y), Quaternion.identity);
+            }  
+            else
+            {
+                clonedPiano = Instantiate(pianoPrefab, new Vector2(launchPoint.transform.position.x + pianoOffset.x, launchPoint.transform.position.y + pianoOffset.y), Quaternion.identity);
+            }
             pianoSummoned = true;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && playerMovement.IsGrounded() && pianoSummoned)

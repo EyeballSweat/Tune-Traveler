@@ -46,6 +46,22 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    // 1 = Left | 0 = Right
+
+    public void ObstructionRedirectionLeft()
+    {
+            UpdateEnemyMovementState();
+            sprite.flipX = true;
+            patrolDestination = 1;
+    }
+
+    public void ObstructionRedirectionRight()
+    {
+            UpdateEnemyMovementState();
+            sprite.flipX = false;
+            patrolDestination = 0;
+    }
+
     // Kind of a quick-fix at the moment
     private void UpdateEnemyMovementState()
     {

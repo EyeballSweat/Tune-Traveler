@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - Floor
   - Banjo Waves
+  - Summoned Piano
   layers:
   - Default
   - TransparentFX

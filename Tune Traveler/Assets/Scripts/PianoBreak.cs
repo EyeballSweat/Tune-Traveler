@@ -23,6 +23,7 @@ public class PianoBreak : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             anim.SetTrigger("PianoHitGround");
+            Debug.Log("Piano Broke");
         }
         else if (projectileLaunch.pianoSummoned == false)
         {
