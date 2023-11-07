@@ -10,11 +10,19 @@ public class NewBehaviourScript : MonoBehaviour
         {
             collision.gameObject.transform.SetParent(transform);
         }
+        if (collision.gameObject.tag == "Summoned Piano")
+        {
+            collision.gameObject.transform.SetParent(transform);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
+        {
+            collision.gameObject.transform.SetParent(null);
+        }
+        if (collision.gameObject.tag == "Summoned Piano")
         {
             collision.gameObject.transform.SetParent(null);
         }

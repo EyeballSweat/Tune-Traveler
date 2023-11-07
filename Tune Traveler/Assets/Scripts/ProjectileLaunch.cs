@@ -49,6 +49,11 @@ public class ProjectileLaunch : MonoBehaviour
         {
             ActivateDrums();
         }
+
+        if (itemCollector.hasSax)
+        {
+            SaxToot();
+        }
     }
 
     public void ShootBanjo()
@@ -97,6 +102,14 @@ public class ProjectileLaunch : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.UpArrow) && playerMovement.isInvisible == true)
         {
             playerMovement.isInvisible = false;
+        }
+    }
+
+    public void SaxToot()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow) && playerMovement.canDash == true)
+        {
+            StartCoroutine(playerMovement.SaxDash());
         }
     }
 }

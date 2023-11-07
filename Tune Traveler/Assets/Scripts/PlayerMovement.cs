@@ -31,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isInvisible;
 
+    public bool canDash = true;
+    public bool isDashing;
+    [SerializeField] private float dashingPower = 24f;
+    [SerializeField] private float dashingTime = 0.2f;
+
     private enum MovementState { idle, walking, jumping, falling, landing }
 
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -53,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
    private void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         if (knockbackCounter <= 0)
         {
             dirX = Input.GetAxisRaw("Horizontal");
@@ -135,10 +145,15 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+        bool isGrounded = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+        if (isGrounded)
+        {
+            canDash = true;
+        }
+        return isGrounded;
     }
 
-    void Flip (bool facingRight)
+    public void Flip (bool facingRight)
     {
         if (flippedLeft && facingRight)
         {
@@ -149,6 +164,26 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Rotate(0, -180, 0);
             flippedLeft = true;
+        }
+    }
+
+    public IEnumerator SaxDash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2((transform.localScale.x * dashingPower) *  (flippedLeft ? 1 : -1  ), 0f);
+        yield return new WaitForSeconds(dashingTime);
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDashing)
+        {
+            return;
         }
     }
 }
