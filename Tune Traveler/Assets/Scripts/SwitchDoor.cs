@@ -5,8 +5,8 @@ using UnityEngine;
 public class SwitchDoor : MonoBehaviour
 {
     public BanjoEffectedSwitch banjoEffectedSwitch;
-    [SerializeField] GameObject doorOpen;
-    [SerializeField] GameObject doorClosed;
+    [SerializeField] private GameObject doorOpen;
+    [SerializeField] private GameObject doorClosed;
     private bool isOpen;
 
     private void Start()

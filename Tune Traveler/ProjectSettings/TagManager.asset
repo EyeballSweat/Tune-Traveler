@@ -14,6 +14,7 @@ TagManager:
   - Floor
   - Banjo Waves
   - Summoned Piano
+  - Accordion
   layers:
   - Default
   - TransparentFX
@@ -53,6 +54,9 @@ TagManager:
     locked: 0
   - name: Back Layer
     uniqueID: 4176620467
+    locked: 0
+  - name: ForeBack
+    uniqueID: 257532201
     locked: 0
   - name: Terrain
     uniqueID: 3785811033
