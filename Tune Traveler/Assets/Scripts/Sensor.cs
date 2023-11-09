@@ -15,15 +15,15 @@ public class Sensor : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = sensorUnaware.GetComponent<SpriteRenderer>().sprite;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject.tag == "Player")
+        if (playerMovement.isInvisible == true)
         {
-            if (playerMovement.isInvisible == false)
-            {
-                gameObject.GetComponent<SpriteRenderer>().sprite = sensorAware.GetComponent<SpriteRenderer>().sprite;
-                isAware = true;
-            }
+            isAware = false;
+        }
+        else
+        {
+            isAware = true;
         }
     }
 

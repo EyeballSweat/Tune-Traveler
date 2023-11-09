@@ -10,6 +10,7 @@ public class ProjectileLaunch : MonoBehaviour
     public itemCollector itemCollector;
     public GameObject banjoWavePrefab;
     public GameObject pianoPrefab;
+    public GameObject saxProjectilePrefab;
     [SerializeField] private Transform launchPoint;
 
     private Animator anim;
@@ -23,6 +24,7 @@ public class ProjectileLaunch : MonoBehaviour
     private Vector3 pianoSpawnPosition;
     private GameObject clonedPiano = null;
     [SerializeField] private Vector2 pianoOffset;
+
 
     void Start()
     {
@@ -94,9 +96,11 @@ public class ProjectileLaunch : MonoBehaviour
     }
 
     public void ActivateDrums()
-    {
+    { 
         if (Input.GetKeyDown(KeyCode.UpArrow) && playerMovement.isInvisible == false)
         {
+            playerMovement.activatingDrums = true;
+            StartCoroutine(ActivatingDrums());
             playerMovement.isInvisible = true;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && playerMovement.isInvisible == true)
@@ -109,7 +113,14 @@ public class ProjectileLaunch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) && playerMovement.canDash == true)
         {
+            Destroy(GameObject.Instantiate(saxProjectilePrefab, launchPoint.position, Quaternion.identity), playerMovement.dashingTime);
             StartCoroutine(playerMovement.SaxDash());
         }
+    }
+
+    IEnumerator ActivatingDrums()
+    {
+        yield return new WaitForSeconds(1);
+        playerMovement.activatingDrums = false;
     }
 }

@@ -29,12 +29,13 @@ public class PlayerMovement : MonoBehaviour
     public bool flippedLeft;
     public bool facingRight;
 
+    public bool activatingDrums;
     public bool isInvisible;
 
     public bool canDash = true;
     public bool isDashing;
     [SerializeField] private float dashingPower = 24f;
-    [SerializeField] private float dashingTime = 0.2f;
+    public float dashingTime = 0.2f;
 
     private enum MovementState { idle, walking, jumping, falling, landing }
 
@@ -65,8 +66,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (knockbackCounter <= 0)
         {
-            dirX = Input.GetAxisRaw("Horizontal");
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            if (!activatingDrums)
+            {
+                dirX = Input.GetAxisRaw("Horizontal");
+                rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            }
+            else
+            {
+                dirX = 0f;
+                rb.velocity = Vector2.zero;
+            }
         }
         else
         {
@@ -96,6 +105,8 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpsLeft -= 1;
         }
+
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -100f, 100f), Mathf.Clamp(rb.velocity.y, -16f, 16f));
 
         UpdateAnimationState();
     }

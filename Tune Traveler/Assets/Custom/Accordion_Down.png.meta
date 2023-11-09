@@ -106,6 +106,58 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,10 +165,10 @@ TextureImporter:
       name: Accordion_Down_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 108
-        width: 378
-        height: 345
+        x: 0
+        y: 0
+        width: 480
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afdfdafad40a50740954e430ddac7dd8
-      internalID: -418774822
+      spriteID: c5af483b1530e3c438c1dd15e184846e
+      internalID: 1314775308
       vertices: []
       indices: 
       edges: []
@@ -134,10 +186,10 @@ TextureImporter:
       name: Accordion_Down_1
       rect:
         serializedVersion: 2
-        x: 506
-        y: 108
-        width: 417
-        height: 258
+        x: 480
+        y: 0
+        width: 480
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +197,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c22a0a0bad416d48a68aa4584bcbd51
-      internalID: -431081097
+      spriteID: b88a8e15dc00a3d428aa3d7b10e804d5
+      internalID: -1698214919
       vertices: []
       indices: 
       edges: []
@@ -155,10 +207,10 @@ TextureImporter:
       name: Accordion_Down_2
       rect:
         serializedVersion: 2
-        x: 999
-        y: 108
-        width: 420
-        height: 199
+        x: 960
+        y: 0
+        width: 480
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40941cd9364dc524db6c3564e7e8ede8
-      internalID: -104356320
+      spriteID: ed0e4c104662beb40884ae079a88fa6d
+      internalID: 1620618075
       vertices: []
       indices: 
       edges: []
@@ -176,10 +228,10 @@ TextureImporter:
       name: Accordion_Down_3
       rect:
         serializedVersion: 2
-        x: 1471
-        y: 108
-        width: 435
-        height: 181
+        x: 1440
+        y: 0
+        width: 480
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +239,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 487b84b4d1752c7489900d77b758896e
-      internalID: -1336846126
+      spriteID: a475987e321165c4db12ce5edc3b2918
+      internalID: 2139812573
       vertices: []
       indices: 
       edges: []
@@ -204,10 +256,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Accordion_Down_0: -418774822
-      Accordion_Down_1: -431081097
-      Accordion_Down_2: -104356320
-      Accordion_Down_3: -1336846126
+      Accordion_Down_0: 1314775308
+      Accordion_Down_1: -1698214919
+      Accordion_Down_2: 1620618075
+      Accordion_Down_3: 2139812573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
