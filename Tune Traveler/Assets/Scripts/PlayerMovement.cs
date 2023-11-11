@@ -17,9 +17,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int maxJumps = 2;
     private int jumpsLeft;
 
+    [SerializeField] private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+    [SerializeField] private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+
     private float dirX = 0f;
-   [SerializeField] private float moveSpeed = 7f;
-   [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float jumpForce = 10f;
 
     public float knockbackForce;
     public float knockbackCounter;
@@ -64,6 +69,24 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (IsGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
         if (knockbackCounter <= 0)
         {
             if (!activatingDrums)
@@ -99,11 +122,27 @@ public class PlayerMovement : MonoBehaviour
             jumpsLeft = 1;
         }
 
-        if (Input.GetButtonDown("Jump") && jumpsLeft > 0)
+        if (jumpBufferCounter > 0f && jumpsLeft > 0)
         {
-            jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpsLeft -= 1;
+            if (coyoteTime > 0f)
+            {
+                jumpSoundEffect.Play();
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpsLeft -= 1;
+                jumpBufferCounter = 0f;
+            }
+            else if (jumpsLeft > 0)
+            {
+                jumpSoundEffect.Play();
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpsLeft -= 1;
+                jumpBufferCounter = 0f;
+            }
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+            coyoteTimeCounter = 0f;
         }
 
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -100f, 100f), Mathf.Clamp(rb.velocity.y, -16f, 16f));
