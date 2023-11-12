@@ -25,6 +25,11 @@ public class ProjectileLaunch : MonoBehaviour
     private GameObject clonedPiano = null;
     [SerializeField] private Vector2 pianoOffset;
 
+    [SerializeField] private AudioSource saxAudio;
+    public AudioSource pianoAudio;
+    [SerializeField] private AudioSource banjoAudio;
+    [SerializeField] private AudioSource drumsAudio;
+
 
     void Start()
     {
@@ -63,7 +68,7 @@ public class ProjectileLaunch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && shootCounter <= 0)
         {
             playerMovement.isInvisible = false;
-
+            banjoAudio.Play();
             Instantiate(banjoWavePrefab, launchPoint.position, Quaternion.identity);
             shootCounter = shootTime;
         }
@@ -100,6 +105,7 @@ public class ProjectileLaunch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && playerMovement.isInvisible == false)
         {
             playerMovement.activatingDrums = true;
+            drumsAudio.Play();
             StartCoroutine(ActivatingDrums());
             playerMovement.isInvisible = true;
         }
@@ -113,6 +119,7 @@ public class ProjectileLaunch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) && playerMovement.canDash == true)
         {
+            saxAudio.Play();
             Destroy(GameObject.Instantiate(saxProjectilePrefab, launchPoint.position, Quaternion.identity), playerMovement.dashingTime);
             StartCoroutine(playerMovement.SaxDash());
         }
